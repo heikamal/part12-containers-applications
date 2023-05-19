@@ -1,5 +1,6 @@
 const express = require('express');
-const { Todo } = require('../mongo')
+const { Todo } = require('../mongo');
+const { ObjectId } = require('bson');
 const router = express.Router();
 
 /* GET todos listing. */
@@ -21,7 +22,9 @@ const singleRouter = express.Router();
 
 const findByIdMiddleware = async (req, res, next) => {
   const { id } = req.params
+  console.log("id: ", id)
   req.todo = await Todo.findById(id)
+  console.log(req.todo)
   if (!req.todo) return res.sendStatus(404)
 
   next()
@@ -35,7 +38,7 @@ singleRouter.delete('/', async (req, res) => {
 
 /* GET todo. */
 singleRouter.get('/', async (req, res) => {
-  res.sendStatus(405); // Implement this
+  res.json(req.todo); // Implement this
 });
 
 /* PUT todo. */
