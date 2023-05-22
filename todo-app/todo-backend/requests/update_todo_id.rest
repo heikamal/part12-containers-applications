@@ -1,6 +1,6 @@
-PUT http://localhost:3000/todos/646b26389e3317cdf939d293
+PUT http://localhost:3000/todos/64676d3e50271a345f627801
 Content-Type: application/json
 
 {
-    "done": true
+    "done": false
 }
