@@ -2,6 +2,6 @@ POST http://localhost:3000/todos
 Content-Type: application/json
 
 {
-  "text": "Scratch butt",
+  "text": "Make Redis data persistent",
   "done": false
 }
