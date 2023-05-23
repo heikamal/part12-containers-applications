@@ -24,7 +24,7 @@ const Todo = ({ todo, onClickDelete, onClickComplete }) => {
     <div style={{ display: 'flex', justifyContent: 'space-between', flexGrow: 1 }}>
       <div>
         <span>
-          {todo.text} 
+          {todo.text}
         </span>
       </div>
       <div style={{display: 'flex', justifyContent: 'flex-end', gap:'10px'}}>
