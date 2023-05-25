@@ -29,7 +29,6 @@ const findByIdMiddleware = async (req, res, next) => {
   const { id } = req.params
   console.log("id: ", id)
   req.todo = await Todo.findById(id)
-  console.log(req.todo)
   if (!req.todo) return res.sendStatus(404)
 
   next()

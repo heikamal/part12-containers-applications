@@ -9,16 +9,16 @@ let visits = 0
 /* GET index data. */
 router.get('/', async (req, res) => {
   visits++
+  //console.log('PING');
 
   res.send({
     ...configs,
-    visits
+    visits,
   });
 });
 
 router.get('/statistics', async (req, res) => {
   const added = await redis.getAsync('added_todos') || 0;
-  console.log(added); // TODO: remove this debug line
   res.send({
     added_todos: Number(added)
   });
