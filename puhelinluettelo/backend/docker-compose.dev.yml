@@ -1,6 +1,19 @@
 version: '3.8'
 
 services:
+  server:
+    image: puhelinluettelo-backend-dev
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3001:3000
+    environment:
+      - PORT=3000
+      - DEBUG=puhelinluettelo-backend:*
+      - MONGODB_URI=mongodb://the_username:the_password@mongo:27017/the_database
   mongo:
     image: mongo
     ports:
