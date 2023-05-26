@@ -6,6 +6,9 @@ const config = require('./utils/config')
 const middleware = require('./utils/middleware')
 const logger = require('./utils/logger')
 const personsRouter = require('./controllers/persons')
+const cors = require('cors')
+
+app.use(cors())
 
 mongoose.set('strictQuery', false)
 
@@ -21,7 +24,6 @@ mongoose.connect(url)
   })
 
 app.use(express.json())
-app.use(express.static('build'))
 app.use(middleware.requestLogger)
 
 app.use('/api/persons', personsRouter)
