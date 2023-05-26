@@ -4,4 +4,4 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-CMD DEBUG=puhelinluettelo-backend:* npm start 
+CMD DEBUG=puhelinluettelo-backend:* npm run start:prod 
