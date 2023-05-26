@@ -3,8 +3,8 @@ const Person = require('../models/person')
 
 // koko puhelinluettelon näyttäminen json-muodossa
 personsRouter.get('/', (req, res) => {
-  Person.find({}).then(people => {
-    res.json(people)
+  Person.find({}).then(persons => {
+    res.json(persons)
   })
 })
 

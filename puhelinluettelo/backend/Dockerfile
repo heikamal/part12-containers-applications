@@ -2,6 +2,10 @@ FROM node:16
 
 WORKDIR /usr/src/app
 
-COPY . .
+COPY --chown=node:node . .
+RUN npm ci --only=production
 
-CMD DEBUG=puhelinluettelo-backend:* npm run start:prod 
+ENV DEBUG=puhelinluettelo-backend:* PORT=3000 MONGODB_URI=placeholder
+
+USER node
+CMD npm run start:prod
