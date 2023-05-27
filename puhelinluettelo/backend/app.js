@@ -8,7 +8,7 @@ const logger = require('./utils/logger')
 const personsRouter = require('./controllers/persons')
 const cors = require('cors')
 
-app.use(cors())
+//app.use(cors())
 
 mongoose.set('strictQuery', false)
 
